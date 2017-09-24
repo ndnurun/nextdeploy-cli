@@ -133,11 +133,11 @@ class NextDeploy < Thor
     init_constants
     remote_version = get_remote_version
     if options[:force]
-      exec "curl -sSL http://cli.nextdeploy.io/ | bash"
+      exec "curl -sSL http://cli.nextdeploy.services-pm.fr/ | bash"
     elsif remote_version.eql? @@version
       puts "You have already the last version of ndeploy. No need to upgrade"
     else
-      exec "curl -sSL http://cli.nextdeploy.io/ | bash"
+      exec "curl -sSL http://cli.nextdeploy.services-pm.fr/ | bash"
     end
   end
 
@@ -813,7 +813,7 @@ class NextDeploy < Thor
     #
     def init_constants
       @@version = "1.12"
-      @@remote_cli = "http://cli.nextdeploy.io"
+      @@remote_cli = "http://cli.nextdeploy.services-pm.fr"
       @@docker_ip = get_docker_ip
     end
 
